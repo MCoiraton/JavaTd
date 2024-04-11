@@ -18,6 +18,22 @@ abstract class Compte  {
         this.solde = solde;
     }
 
+    public void versement(double montantTTC){
+        this.solde+=montantTTC;
+    }
 
+    public void retrait(double montantTTC){
+        this.solde-=montantTTC;
+    }
+    public void virement(double montantTTC, Compte receveur){
+        retrait(montantTTC);
+        receveur.versement(montantTTC);
+    }
+
+    @Override
+    public String toString() {
+        return "Compte [solde=" + solde + ", typeCarte=" + typeCarte + "]";
+    }
+    
     
 }
