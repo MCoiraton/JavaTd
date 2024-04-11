@@ -9,7 +9,7 @@ abstract class Compte  {
     public Compte(double solde, TypeCarte typeCarte) {
         nbCompte++;
         this.code=nbCompte;
-        this.solde = solde;
+        this.solde = solde - typeCarte.getCost();
         this.typeCarte = typeCarte;
     }
 
