@@ -17,7 +17,7 @@ abstract class Compte  {
     }
 
     public static void setMontantBanque(double montantBanque) {
-        Compte.montantBanque = montantBanque;
+        Compte.montantBanque += montantBanque;
     }
 
     public double getSolde() {
