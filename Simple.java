@@ -10,7 +10,7 @@ class Simple extends Compte{
     public void versement(double montantTTC){
         montantTTC = montantTTC - 5;
         setMontantBanque(5);
-        if (super.getSolde() - montantTTC >= 0) {
+        if (super.getSolde() + montantTTC >= 0) {
            super.versement(montantTTC);
         } else {
             System.out.println("Opération impossible : solde insuffisant.");
@@ -18,7 +18,7 @@ class Simple extends Compte{
     }
     public void retrait(double montantTTC){
         montantTTC= montantTTC-5;
-        MontantBanque(5);
+        setMontantBanque(5);
         if (super.getSolde() - montantTTC >= 0) {
            super.retrait(montantTTC);
         } else {
@@ -29,7 +29,7 @@ class Simple extends Compte{
         montantTTC = montantTTC - 5;
         setMontantBanque(5);
         if (super.getSolde() - montantTTC >= 0) {
-           super.virement(montantTTC);
+           super.virement(montantTTC, receveur);
         } else {
             System.out.println("Opération impossible : solde insuffisant.");
         }

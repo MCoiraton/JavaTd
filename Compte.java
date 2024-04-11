@@ -46,7 +46,7 @@ abstract class Compte  {
         return "Compte numéro"+code+" [solde=" + solde + ", typeCarte=" + typeCarte + "]";
     }
     
-    public String banqueToString(){
+    static public String banqueToString(){
         return "montant ammassé par la banque : "+montantBanque+" pour " +nbOperations+" operations";
     }
     
