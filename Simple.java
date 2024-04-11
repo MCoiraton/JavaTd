@@ -7,11 +7,6 @@ class Simple extends Compte{
         super(solde, typeCarte);
     }
     
-    protected void effectuerTransaction(double montant, double taxe) {
-        solde -= (montant + taxe);
-        totalTaxe += taxe;
-        nombreTransactions++;
-    }
     public void versement(double montantTTC){
         montantTTC= montantTTC-5;
         if (solde - montantTTC >= 0) {
