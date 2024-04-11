@@ -1,12 +1,14 @@
 package TD1;
 
 abstract class Compte  {
-    private static int code=0;
+    private static int nbCompte=0;
+    private int code;
     private double solde;
     private TypeCarte typeCarte;
 
     public Compte(double solde, TypeCarte typeCarte) {
-        this.code = code++;
+        nbCompte++;
+        this.code=nbCompte;
         this.solde = solde;
         this.typeCarte = typeCarte;
     }
@@ -30,9 +32,8 @@ abstract class Compte  {
         receveur.versement(montantTTC);
     }
 
-    @Override
-    public String toString() {
-        return "Compte [solde=" + solde + ", typeCarte=" + typeCarte + "]";
+    public String CompteToString() {
+        return "Compte numéro"+code+" [solde=" + solde + ", typeCarte=" + typeCarte + "]";
     }
     
     
